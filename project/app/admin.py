@@ -4,3 +4,4 @@ from .models import *
 # Register your models here.
 
 admin.site.register(React)
+admin.site.register(Event)

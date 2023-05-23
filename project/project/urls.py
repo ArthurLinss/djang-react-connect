@@ -23,5 +23,7 @@ from rest_framework import routers
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", ReactView.as_view(), name="anything"),
+    #path("", ReactView.as_view(), name="anything"),
+    path("", EventView.as_view(), name="events"),
+
 ]
