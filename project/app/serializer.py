@@ -1,11 +1,6 @@
 from rest_framework import serializers
-from .models import React, Event
+from .models import Event
 
-
-class ReactSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = React
-        fields = ["employee", "department", "date"]
 
 
 class EventSerializer(serializers.ModelSerializer):

@@ -2,13 +2,38 @@ from django.db import models
 
 # Create your models here.
 
-class React(models.Model):
-    employee = models.CharField(max_length=30)
-    department = models.CharField(max_length=200)
-    date = models.CharField(max_length=30, default="", null=True, blank=True)
+class Person(models.Model):
+    surname = models.CharField(max_length=20,default="",blank=True)
+    forename = models.CharField(max_length=20,default="",blank=True)
 
     def __str__(self):
-        return self.employee
+        return self.surname + ", " + forename
+
+    @property
+    def name(self):
+        return self.forename + " " + self.surname
+
+class Quote(models.Model):
+    title = models.CharField(max_length=200, default="", blank=True)
+    author = models.ForeignKey(Person, on_delete=models.CASCADE)
+    text = models.TextField(default="")
+
+    def __str__(self):
+        return self.title
+
+class Video(models.Model):
+    title = models.CharField(max_length=200, default="", blank=True)
+    url =  models.URLField(max_length=200)
+
+    def __str__(self):
+        return self.title
+
+class Location(models.Model):
+    name = models.CharField(max_length=200,default="",blank=True)
+    country = models.CharField(max_length=200, default="", blank=True)
+
+    def __str__(self):
+        return self.name
 
 
 
@@ -24,11 +49,13 @@ class Event(models.Model):
     body = models.TextField(default="", blank=True)
     typ = models.CharField(max_length=20, choices=event_typ_choices, blank=True)
     info_link = models.CharField(max_length=200, default="", blank=True)
-    source_link = models.CharField(max_length=200, default="", blank=True)
+    sources_link = models.TextField(default="", blank=True)
     video_link = models.CharField(max_length=200, default="", blank=True)
+    video_link2 = models.CharField(max_length=200, default="", blank=True)
     image = models.ImageField(null=True, blank=True)
     author = models.CharField(max_length=200, default="", blank=True)
     location = models.CharField(max_length=200, default="", blank=True)
 
     def __str__(self):
         return self.title
+
