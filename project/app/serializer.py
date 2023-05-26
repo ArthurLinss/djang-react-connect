@@ -1,9 +1,16 @@
 from rest_framework import serializers
-from .models import Event
+from .models import Quote, Event
 
 
 
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
+        fields = "__all__"
+
+
+
+class QuoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Quote
         fields = "__all__"
