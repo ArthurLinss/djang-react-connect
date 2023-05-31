@@ -26,6 +26,17 @@ q = Quote(
 q.save()
 
 q = Quote(
+    title = "Freedom"
+    ,author = "Wolodymr Zelenskyy"
+    ,text = "It's a victory, when the weapons fall silent and people speak up."
+    ,helpText = ""
+    ,date = "2022"
+    ,context = "Ukrainian president's speech."
+    ,sources_link = "https://ec.europa.eu/commission/presscorner/detail/en/speech_23_2724"
+)
+q.save()
+
+q = Quote(
     title = "The Fight Is Here"
     ,author = "Wolodymr Zelenskyy"
     ,text = "I need ammunition, not a ride."

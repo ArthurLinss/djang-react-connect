@@ -76,3 +76,35 @@ class Event(models.Model):
         return self.date
 
 
+
+
+CV_Choices = (
+    ("", ""),
+    ("WE","Work Experience"),
+    ("Ed", "Education"),
+)
+
+
+
+class Profile(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.CharField(max_length=200, default="")
+    phone = models.CharField(max_length=200, default="")
+    birth = models.DateTimeField(null=True, blank=True)
+    location = models.TextField()
+
+class CVItem(models.Model):
+    #title = models.CharField(max_length=200, unique=True)
+    date1 = models.DateTimeField(null=True, blank=True)
+    date2 = models.DateTimeField(null=True, blank=True)
+    location = models.CharField(max_length=200, default="")
+    position = models.CharField(max_length=200, default="")
+    position_detail = models.TextField(default="")
+    description = models.TextField(default="")
+    typ = models.CharField(default="", choices=CV_Choices, max_length=200)
+    source_list = models.TextField()
+    source_to_show = models.CharField(default="", max_length=200)
+
+
+    def __str__(self):
+        return self.position + " in " + self.location
