@@ -6,7 +6,7 @@ from .models import Event, Quote
 from rest_framework.response import Response
 from .serializer import *
 from django.http import Http404
-from rest_framework import status
+from rest_framework import status, generics
 # Create your views here.
 import json
 
@@ -33,3 +33,10 @@ class EventView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+class BlogpostList(generics.ListCreateAPIView):
+    queryset = Blogpost.objects.all()
+    serializer_class = BlogpostSerializer
+

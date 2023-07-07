@@ -97,3 +97,20 @@ e = Event(
     ,location = ""
 )
 e.save()
+
+e = Event(
+    date = "24 June 2023"
+    ,title = "March on Moscau"
+    ,subtitle = "Wagner's short revolution"
+    ,text = (
+        "On 23 June 2023, the Wagner Group, a Russian government-funded paramilitary and private military company, staged a rebellion. The rebellion occurred after a period of increasing tensions between the Russian Ministry of Defense and the leader of Wagner, Yevgeny Prigozhin."
+        )
+    ,info_link = ""
+    ,sources_link = ""
+    ,video_link = ""
+    ,video_link2 =""
+    ,image = None
+    ,author = ""
+    ,location = ""
+)
+e.save()

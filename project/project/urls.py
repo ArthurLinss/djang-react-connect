@@ -23,6 +23,7 @@ from rest_framework import routers
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", EventView.as_view(), name="events"),
-
+    path("ukraine/", EventView.as_view(), name="ukraine"),
+    path("ww2/", EventView.as_view(), name="ww2"),
+    path("blog/", BlogpostList.as_view(), name="blog"),
 ]

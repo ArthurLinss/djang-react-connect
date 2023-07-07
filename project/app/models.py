@@ -108,3 +108,8 @@ class CVItem(models.Model):
 
     def __str__(self):
         return self.position + " in " + self.location
+
+
+class Blogpost(models.Model):
+    title = models.CharField(max_length=200)
+    text = models.TextField()
