@@ -17,6 +17,7 @@ Event.objects.all().delete()
 q = Quote(
     title = "Snake Island"
     ,author = "Ukrainian soldier"
+    ,category = "ukraine"
     ,text = "Russian warship, go fuck yourself"
     ,helpText = ""
     ,date = "24 February 2022"
@@ -28,6 +29,7 @@ q.save()
 q = Quote(
     title = "Freedom"
     ,author = "Wolodymr Zelenskyy"
+    ,category = "ukraine"
     ,text = "It's a victory, when the weapons fall silent and people speak up."
     ,helpText = ""
     ,date = "2022"
@@ -39,6 +41,7 @@ q.save()
 q = Quote(
     title = "The Fight Is Here"
     ,author = "Wolodymr Zelenskyy"
+    ,category = "ukraine"
     ,text = "I need ammunition, not a ride."
     ,helpText = ""
     ,date = "25 February 2022"
@@ -51,6 +54,7 @@ q.save()
 q = Quote(
     title = "Public Resistance"
     ,author = "Ukrainian Woman"
+    ,category = "ukraine"
     ,text = "Take these seeds and put them in your pockets so at least sunflowers will grow when you all die down here."
     ,helpText = ""
     ,date = "26 February 2022"
@@ -68,6 +72,7 @@ q.save()
 
 e = Event(
     date = "24 February 2022"
+    ,category = "ukraine"
     ,title = "The War is here"
     ,subtitle = "... and so it begins"
     ,text = (
@@ -85,6 +90,7 @@ e.save()
 
 e = Event(
     date = "25 May 2023"
+    ,category = "ukraine"
     ,title = "Belgorod Holds"
     ,subtitle = "... bringing the war back to Russia."
     ,text = "Pro-Ukrainian russian troops attack the Russian border at Belgorod."
@@ -100,6 +106,7 @@ e.save()
 
 e = Event(
     date = "24 June 2023"
+    ,category = "ukraine"
     ,title = "March on Moscau"
     ,subtitle = "Wagner's short revolution"
     ,text = (
@@ -109,6 +116,23 @@ e = Event(
     ,sources_link = ""
     ,video_link = ""
     ,video_link2 =""
+    ,image = None
+    ,author = ""
+    ,location = ""
+)
+e.save()
+
+
+e = Event(
+    date = "1960"
+    ,category = "vietnamwar"
+    ,title = "Cold War Heats Up"
+    ,subtitle = "... Vietnam"
+    ,text = "USA vs. Russia in Asia."
+    ,info_link = ""
+    ,sources_link = ""
+    ,video_link = ""
+    ,video_link2 = ""
     ,image = None
     ,author = ""
     ,location = ""

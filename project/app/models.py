@@ -20,6 +20,7 @@ class Person(models.Model):
 
 class Quote(models.Model):
     title = models.CharField(max_length=200, default="", blank=True, unique=True)
+    category = models.CharField(max_length=200, default="", blank=True, null=True)
     #author = models.ForeignKey(Person, on_delete=models.CASCADE)
     author = models.CharField(max_length=30, default="", blank=True)
     text = models.TextField(default="")
@@ -52,6 +53,7 @@ class Location(models.Model):
 
 class Event(models.Model):
     date = models.CharField(max_length=200, default="")
+    category = models.CharField(max_length=200, default="", blank=True, null=True)
     title = models.CharField(max_length=40, default="", blank=True, unique=True)
     subtitle = models.CharField(max_length=100, default="", blank=True)
     text = models.TextField(default="", blank=True)

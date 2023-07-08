@@ -25,5 +25,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("ukraine/", EventView.as_view(), name="ukraine"),
     path("ww2/", EventView.as_view(), name="ww2"),
+    path("vietnamwar/", EventView.as_view(), name="vietnamwar"),
     path("blog/", BlogpostList.as_view(), name="blog"),
 ]
