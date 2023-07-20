@@ -114,4 +114,5 @@ class CVItem(models.Model):
 
 class Blogpost(models.Model):
     title = models.CharField(max_length=200)
+    subtitle = models.CharField(max_length=200, default="", blank=True)
     text = models.TextField()
